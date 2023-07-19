@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed } from 'vue';
+import { ref } from 'vue';
 
 const firstName = ref('');
 const lastName = ref('');
@@ -12,14 +12,11 @@ const dialog = ref(false)
 const onSubmit = (v)=> {
   if(!form.value) return 
    loading.value = true, setTimeout(()=> (loading.value = false), 1000)
-}
+};
 
 const required = (v)=> {
   return !!v || 'Field is required'
-}
-
-
-const fullName = ref([])
+};
 
 </script>
 <template>

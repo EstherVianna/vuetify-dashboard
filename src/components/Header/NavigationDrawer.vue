@@ -24,8 +24,7 @@ onBeforeMount(()=>{
         <v-list-subheader color="white">Menu</v-list-subheader>
         <v-list-item prepend-icon="mdi-home" color="secondary" href="#">
           <router-link
-          to="/" 
-          style="text-decoration: none; color: #FFFF;"
+          to="/"
           >
           Home
           </router-link>

@@ -3,6 +3,7 @@ import AddUserModal from '@/components/AddUserModal.vue';
 
 </script>
 <template>
+<v-spacer></v-spacer>
 <v-container>
   <v-card min-width="200px" max-width="1000px" class="border mb-5 ma-auto">
     <div class="d-flex justify-space-between">

@@ -1,13 +1,16 @@
 <script setup>
-import HomePage from './Views/HomePage.vue'
-import UsersView from './Views/UsersView.vue'
+import TheHeader from '@/components/Header/TheHeader.vue';
+import { provide, ref } from 'vue'
+
+const isDrawerOpen = ref(false);
+provide('isDrawerOpen', isDrawerOpen);
 
 </script>
 <template>
 <v-app>
-  <HomePage/>
-  <UsersView/>
-
+  <the-header/>
+  <router-view>
+  </router-view>
 </v-app>
 </template>
 

@@ -21,13 +21,13 @@ onBeforeMount(()=>{
 <template>
 <v-navigation-drawer v-model="toggleDrawer" class="bg-bgColor" >
     <v-list>
-        <v-list-subheader color="white">Menu</v-list-subheader>
-        <v-list-item prepend-icon="mdi-home" color="secondary" href="#">
-          <router-link
-          to="/"
-          >
+      <v-spacer></v-spacer>
+        <v-list-item-title 
+        class="ml-6 pa-2"
+        color="white">MENU</v-list-item-title>
+        <v-divider></v-divider>
+        <v-list-item prepend-icon="mdi-home" color="secondary" href="/">
           Home
-          </router-link>
         </v-list-item>
         <v-list-group>
           <template #activator="{ props }">
@@ -35,8 +35,8 @@ onBeforeMount(()=>{
             prepend-icon="mdi-chart-bar">
           </v-list-item>
         </template>
-        <v-list-item href="#">Send Report</v-list-item>
-        <v-list-item href="#">Visualize All Reports</v-list-item>
+        <v-list-item to="writereport">Send Report</v-list-item>
+        <v-list-item to="allreports">Visualize All Reports</v-list-item>
       </v-list-group>
       <v-list-item prepend-icon="mdi-account" 
         to="users"
@@ -44,12 +44,12 @@ onBeforeMount(()=>{
         Users
       </v-list-item>
       <v-list-item prepend-icon="mdi-cog"
-        href="#"
+        to="settings"
         >
         Settings
     </v-list-item>
     <v-divider></v-divider>
-    <v-list-item
+    <v-list-item class="d-flex align-end"
     >
     Dark mode
       <v-switch  prepend-icon="mdi-theme-light-dark"

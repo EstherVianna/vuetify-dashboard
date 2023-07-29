@@ -6,7 +6,7 @@
     <v-img 
         src="https://images.pexels.com/photos/7948041/pexels-photo-7948041.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" max-height="200px"  class="align-end text-white" cover>
     </v-img>
-      <v-card-title>Desempenho Geral da Equipe</v-card-title>
+      <v-card-title>Desempenho Geral da Equipe Equipe</v-card-title>
     <v-card-subtitle 
       class="font-weight-bold text-accent">
       Produtividade, Retenção e Satisfação

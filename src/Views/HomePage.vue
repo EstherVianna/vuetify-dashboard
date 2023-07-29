@@ -1,5 +1,6 @@
 <script setup>
 import CardMain from '@/components/CardMain.vue';
+
 </script>
 <template>
 <v-main>

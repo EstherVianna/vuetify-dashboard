@@ -4,10 +4,13 @@ import AddUserModal from '@/components/AddUserModal.vue';
 </script>
 <template>
 <v-spacer></v-spacer>
-<v-container>
-  <v-card min-width="200px" max-width="1000px" class="border mb-5 ma-auto">
+<v-main>
+  <v-card class="mt-4 ma-auto"
+  variant="tonal"
+  elevation="8"
+  width="80%" min-height="70%" >
     <div class="d-flex justify-space-between">
-      <v-card-title>Users</v-card-title>
+      <v-card-title class="text-h4 pa-4">Users</v-card-title>
       <add-user-modal/>
 </div>
 <v-table>
@@ -112,5 +115,5 @@ import AddUserModal from '@/components/AddUserModal.vue';
         </tbody>
       </v-table>
     </v-card>
-  </v-container>
+  </v-main>
 </template>

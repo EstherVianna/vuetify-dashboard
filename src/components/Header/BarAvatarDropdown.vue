@@ -15,7 +15,7 @@
                     <v-list-item-title>My account</v-list-item-title>
                 </v-list-item>
                 <v-list-item prepend-icon="mdi-file-chart-outline"
-                            to="#">
+                            to="writereport">
                     <v-list-item-title>Write Reports </v-list-item-title>
                 </v-list-item>
             </v-list>

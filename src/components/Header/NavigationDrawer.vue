@@ -35,7 +35,7 @@ onBeforeMount(()=>{
             prepend-icon="mdi-chart-bar">
           </v-list-item>
         </template>
-        <v-list-item to="writereport">Send Report</v-list-item>
+        <v-list-item to="myreports">Send Report</v-list-item>
         <v-list-item to="allreports">Visualize All Reports</v-list-item>
       </v-list-group>
       <v-list-item prepend-icon="mdi-account" 

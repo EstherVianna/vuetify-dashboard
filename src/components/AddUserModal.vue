@@ -1,22 +1,9 @@
 <script setup>
-import { ref } from 'vue';
+import { inject } from 'vue';
 
-const firstName = ref('');
-const lastName = ref('');
-const email = ref('');
-const password = ref('');
-const role = ref('');
-const loading = ref(false)
-const form = ref(false);
-const dialog = ref(false)
-const onSubmit = (v)=> {
-  if(!form.value) return 
-   loading.value = true, setTimeout(()=> (loading.value = false), 1000)
-};
-
-const required = (v)=> {
-  return !!v || 'Field is required'
-};
+const required = inject('required')
+const onSubmit = inject('submitFunction')
+const validationItens = inject('validationItens')
 
 </script>
 <template>
@@ -25,15 +12,14 @@ const required = (v)=> {
         tonal 
         size="small" 
         color="secondary"
-        @click="dialog = true"
+        @click="validationItens.dialog = true"
         >
-            + Add new user
+          + Add new user
         </v-btn>
-        <v-dialog v-model="dialog">
-
+        <v-dialog v-model="validationItens.dialog">
         <v-card>
           <v-form 
-            v-model="form"
+            v-model="validationItens.form"
             @submit.prevent="onSubmit">
           <v-card-title>
             <span class="text-h5">Create User</span>
@@ -47,12 +33,12 @@ const required = (v)=> {
               md="6"
               >
               <v-text-field
-              v-model="firstName"
+              v-model="validationItens.firstName"
               label="Legal first name*"
               :rules="[required]"
               required
               clearable
-              :readonly="loading"
+              :readonly="validationItens.loading"
               ></v-text-field>
             </v-col>
                 <v-col
@@ -61,12 +47,12 @@ const required = (v)=> {
                   md="6"
                 >
                 <v-text-field
-                v-model="lastName"
+                v-model="validationItens.lastName"
                 label="Legal last name*"
                 :rules="[required]"
                 required
                 clearable
-                :readonly="loading"
+                :readonly="validationItens.loading"
                 ></v-text-field>
               </v-col>
               <v-col
@@ -74,12 +60,12 @@ const required = (v)=> {
                 sm="8"
                 md="6">
                 <v-text-field
-                v-model="email"
+                v-model="validationItens.email"
                 label="Email*"
                 :rules="[required]"
                 required
                 clearable
-                :readonly="loading"
+                :readonly="validationItens.loading"
                 ></v-text-field>
             </v-col>
             <v-col
@@ -88,13 +74,13 @@ const required = (v)=> {
               md="6"
               >
               <v-text-field
-              v-model="password"
+              v-model="validationItens.password"
               label="Password*"
               type="password"
               :rules="[required]"
               required
               clearable
-              :readonly="loading"
+              :readonly="validationItens.loading"
               ></v-text-field>
             </v-col>
             <v-col
@@ -102,11 +88,11 @@ const required = (v)=> {
             sm="6"
           >
           <v-text-field
-          v-model="role"
+          v-model="validationItens.role"
           label="Role*"
           required
           clearable
-          :readonly="loading"
+          :readonly="validationItens.loading"
           ></v-text-field>
         </v-col>
       </v-row>
@@ -118,13 +104,13 @@ const required = (v)=> {
       <v-btn
         color="accent"
         variant="text"
-        @click="dialog = false"
+        @click="validationItens.dialog = false"
       >
       Close
       </v-btn>
       <v-btn
-        :disabled="!form"
-        :loading="loading"
+        :disabled="!validationItens.form"
+        :loading="validationItens.loading"
         color="accent"
         variant="text"
         type="submit"

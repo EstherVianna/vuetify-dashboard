@@ -12,7 +12,10 @@ const validation = reactive({
   password:'',
   role:'',
   title:'',
-  report:'',
+  reportContent:'',
+  file: [],
+  index: 0,
+  reportData: [],
   loading: false,
   form: false,
   dialog: false

@@ -1,26 +1,43 @@
 <script setup>
-import { inject } from 'vue';
+import { provide, inject, watchEffect } from 'vue';
 
 const required = inject('required')
 const onSubmit = inject('submitFunction')
 const validationItens = inject('validationItens')
+
+const getReportsData = ()=>{
+  // const titleList = '';
+  // const reportContent = '';
+  // const reportFiles = '';
+  validationItens.reportData.push({
+    index: ++validationItens.index,
+    titleList: validationItens.title,
+    report: validationItens.reportContent,
+    reportFiles: validationItens.file
+  });
+  validationItens.title = '';
+  validationItens.reportContent = '';
+  validationItens.file = [];
+};
+
+provide('data', validationItens.reportData)
 
 </script>
 <template>
   <v-main>
     <v-spacer></v-spacer>
     <v-card
-    class="mx-auto mt-4 pa-4"
+    class="mx-auto pa-4"
     variant="tonal" 
     elevation="8"
-    width="80%"
-    min-height="70%" 
+    width="99%"
+    min-height="100%" 
     >
     <v-form ref="validationItens.form"
     v-model="validationItens.form"
     @submit.prevent="onSubmit"
     >
-      <v-card-title class="text-h4 pa-4">Write reports</v-card-title>
+    <p class="d-flex justify-center text-h6 text-lg-h4 mb-4">Write reports</p>
       <v-text-field 
         variant="outlined"
         color="accent"
@@ -38,7 +55,7 @@ const validationItens = inject('validationItens')
         label="Report"
         counter
         placeholder="Start writing..."
-        v-model="validationItens.report"
+        v-model="validationItens.reportContent"
         :rules="[required]"
         required
         clearable/>
@@ -46,6 +63,7 @@ const validationItens = inject('validationItens')
           color="accent"
           variant="plain"
           label="File input"
+          v-model="validationItens.file"
           chips
           multiple
           clearable
@@ -64,9 +82,9 @@ const validationItens = inject('validationItens')
           type="submit"
           :disabled="!validationItens.form"
           :loading="validationItens.loading"
-          to="allreports"
+          @click="getReportsData"
           >
-          Submit
+          Save
         </v-btn>
       </v-card-actions>
     </v-form>

@@ -4,7 +4,9 @@ import { useTheme } from 'vuetify'
 
 const toggleDrawer = inject('isDrawerOpen');
 const theme = useTheme();
-const toggleTheme = () => theme.global.name.value = theme.global.current.value.dark ? 'light' : 'dark';
+const toggleTheme = 
+                  () => theme.global.name.value =
+                                                theme.global.current.value.dark ? 'light' : 'dark';
 
 watch(()=> theme.global.name.value, (newTheme)=>{
   localStorage.setItem('theme', newTheme)
@@ -15,7 +17,7 @@ onBeforeMount(()=>{
   theme.global.name.value = storedTheme
     if(storedTheme == null){
       theme.global.name.value = 'light'
-    }
+    };
 });
 </script>
 <template>
@@ -35,27 +37,26 @@ onBeforeMount(()=>{
             prepend-icon="mdi-chart-bar">
           </v-list-item>
         </template>
-        <v-list-item to="myreports">Send Report</v-list-item>
+        <v-list-item to="sendreports">Send Report</v-list-item>
         <v-list-item to="allreports">Visualize All Reports</v-list-item>
       </v-list-group>
       <v-list-item prepend-icon="mdi-account" 
         to="users"
-        >
+      >
         Users
       </v-list-item>
       <v-list-item prepend-icon="mdi-cog"
         to="settings"
-        >
+      >
         Settings
     </v-list-item>
     <v-divider></v-divider>
     <v-list-item class="d-flex align-end"
     >
-    Dark mode
+      Dark mode
       <v-switch  prepend-icon="mdi-theme-light-dark"
-         @change="toggleTheme()" color="success"/>
+      @change="toggleTheme()" color="success"/>
     </v-list-item>
   </v-list>
-  </v-navigation-drawer>
- 
+</v-navigation-drawer>
 </template>

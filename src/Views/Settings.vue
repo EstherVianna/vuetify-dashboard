@@ -3,13 +3,13 @@
 </script>
 <template>
 <v-main>
-    <v-container>
         <v-card
-        class="d-flex flex-column justify-center align-itens-center ma-auto
-        pa-3"
+        class="mx-auto ma-auto"
         variant="tonal"
         elevation="8"
-        title="General preferences">
+        width="99%"
+        min-height="100%">
+        <p class="d-flex justify-center text-h6 text-lg-h4 my-2">General Preferences</p>
         <v-card-actions>
             <v-btn prepend-icon="mdi-arrow-left" variant="plain" to="/">Back</v-btn>
         </v-card-actions>
@@ -21,7 +21,6 @@
             ></v-select>
         </v-card-item>    
         </v-card>
-    </v-container>
 </v-main>
 
 </template>

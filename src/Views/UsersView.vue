@@ -3,14 +3,14 @@ import AddUserModal from '@/components/AddUserModal.vue';
 
 </script>
 <template>
-<v-spacer></v-spacer>
 <v-main>
-  <v-card class="mt-4 ma-auto"
+  <v-card class="mx-auto ma-auto"
   variant="tonal"
   elevation="8"
-  width="80%" min-height="70%" >
+  width="99%"
+  min-height="100%" >
+  <p class="d-flex justify-center text-h6 text-lg-h4 my-2">Users</p>
     <div class="d-flex justify-space-between">
-      <v-card-title class="text-h4 pa-4">Users</v-card-title>
       <add-user-modal/>
 </div>
 <v-table>

@@ -1,4 +1,5 @@
 <script setup>
+
 </script>
 <template>
 <v-col cols="12" md="6" lg="4">
@@ -16,17 +17,28 @@
       Officia deserunt sequi dolore deleniti obcaecati illum 
       consequuntur maxime optio vitae nisi.
     </v-card-text>
-    <v-card-actions class="bg-secondary align-center" >
-      <v-btn href="#" size="small" variant="tonal"
-            class="flex-md-shrink-1" >
+    <v-card-actions class="bg-secondary align-center">
+      <v-btn class="flex-md-shrink-1"
+      size="small"
+      variant="tonal"
+      to="#" 
+      >
         Produtividade
       </v-btn>
-      <v-btn href="#" size="small" variant="tonal"
-            class="flex-md-grow-1">
+      <v-btn  
+      class="flex-md-grow-1"
+      size="small"
+      variant="tonal"
+      to="#"
+      >
         Retenção
       </v-btn>
-      <v-btn href="#" size="small" variant="tonal"
-            class="flex-md-grow-1">
+      <v-btn  
+      class="flex-md-grow-1"
+      size="small" 
+      ariant="tonal"
+      to="#"
+      >
         Satisfação
       </v-btn>
     </v-card-actions>

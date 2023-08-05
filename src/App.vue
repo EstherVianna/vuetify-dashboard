@@ -1,46 +1,47 @@
 <script setup>
 import TheHeader from '@/components/Header/TheHeader.vue';
-import { ref, reactive, provide} from 'vue'
+import { ref, reactive, provide, computed } from 'vue'
 
 const isDrawerOpen = ref(false);
 provide('isDrawerOpen', isDrawerOpen);
 
 const validation = reactive({
-  firstName: '',
-  lastName: '',
+  firstName: 'Kaleb',
+  lastName: 'Jhonson',
   email: '',
   password:'',
-  role:'',
-  title:'',
+  role:'CEO',
+  reportTitle:'',
   reportContent:'',
-  file: [],
-  index: 0,
+  reportFiles: [],
+  reportIndex: 0,
   reportData: [],
+  reportDate: new Date().toLocaleString().slice(0, 10),
   loading: false,
   form: false,
-  dialog: false
+  dialog: false,
 });
 
 const onSubmit = (v)=> {
   if(!validation.form) return 
-   validation.loading= true, setTimeout(()=> (validation.loading = false), 1000)
+   validation.loading= true, setTimeout(()=> (validation.loading = false), 500)
 };
 
 const required = (v)=> {
   return !!v || 'Field is required'
 };
 
+const user = computed(()=> `${validation.firstName} ${validation.lastName}`);
+
 provide('required', required);
-provide('submitFunction', onSubmit)
-provide('validationItens', validation)
+provide('submitFunction', onSubmit);
+provide('validationItens', validation);
+provide('user', user)
 
 </script>
 <template>
 <v-app>
   <the-header/>
-  <router-view>
-  </router-view>
+  <router-view/>
 </v-app>
 </template>
-
-

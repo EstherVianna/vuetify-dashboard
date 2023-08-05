@@ -1,16 +1,16 @@
 <script setup>
-import CardMain from '@/components/CardMain.vue';
+import HomeCards from '@/components/HomeCards.vue';
 
 </script>
 <template>
 <v-main>
   <v-container>
     <p class="text-subtitle-1 text-md-h4">Visão geral RH</p>
-    <v-row class="mt-5" >
-        <card-main/>
-        <card-main/>
-        <card-main/>
-        <card-main/>
+    <v-row class="mt-5">
+        <home-cards/>
+        <home-cards/>
+        <home-cards/>
+        <home-cards/>
     </v-row>
   </v-container>
 </v-main>

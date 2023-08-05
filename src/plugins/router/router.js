@@ -3,13 +3,16 @@ import HomePageVue from "@/Views/HomePage.vue";
 import UsersViewVue from "@/Views/UsersView.vue";
 import SettingsVue from "@/Views/Settings.vue";
 import ReportsVue from "@/Views/Reports.vue";
-import ReportsToSendVue from "@/Views/ReportsToSend.vue";
 import AllReportsVue from "@/Views/AllReports.vue";
 
 
 const routes = [
     {
         path: '/',
+        redirect: '/home'
+    },
+    {
+        path: '/home',
         name: 'Home',
         component: HomePageVue
     },
@@ -27,11 +30,6 @@ const routes = [
         path: '/writereport',
         name: 'Reports',
         component: ReportsVue
-    },
-    {
-        path: '/sendreports',
-        name: 'SendReports',
-        component: ReportsToSendVue
     },
     {
         path: '/allreports',

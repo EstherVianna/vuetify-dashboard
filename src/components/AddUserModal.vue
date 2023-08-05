@@ -100,7 +100,7 @@ const validationItens = inject('validationItens')
     <small>*Indicates required field</small>
   </v-card-text>
     <v-card-actions>
-      <v-spacer></v-spacer>
+      <v-spacer/>
       <v-btn
         color="accent"
         variant="text"

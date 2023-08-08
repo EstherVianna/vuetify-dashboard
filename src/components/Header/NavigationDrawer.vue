@@ -19,16 +19,27 @@ onBeforeMount(()=>{
       theme.global.name.value = 'light'
     };
 });
+
+const validationItens = inject('validationItens')
+const user = inject('user')
 </script>
 <template>
-<v-navigation-drawer v-model="toggleDrawer" class="bg-bgColor" >
-    <v-list>
-      <v-spacer></v-spacer>
+<v-navigation-drawer
+class="bg-bgColor"
+v-model="toggleDrawer">
+    <v-list class="ma-3">
+      <v-spacer/>
         <v-list-item-title 
         class="ml-6 pa-2"
-        color="white">MENU</v-list-item-title>
-        <v-divider></v-divider>
-        <v-list-item prepend-icon="mdi-home" color="secondary" href="/">
+        color="white"
+        >
+        Hello, {{ user }} 👋
+      </v-list-item-title>
+        <v-divider/>
+        <v-list-item
+        prepend-icon="mdi-home"
+        color="secondary"
+        to="home">
           Home
         </v-list-item>
         <v-list-group>
@@ -37,8 +48,11 @@ onBeforeMount(()=>{
             prepend-icon="mdi-chart-bar">
           </v-list-item>
         </template>
-        <v-list-item to="sendreports">Send Report</v-list-item>
-        <v-list-item to="allreports">Visualize All Reports</v-list-item>
+        <v-list-item 
+        to="allreports"
+        >
+        All Reports
+        </v-list-item>
       </v-list-group>
       <v-list-item prepend-icon="mdi-account" 
         to="users"
@@ -50,12 +64,14 @@ onBeforeMount(()=>{
       >
         Settings
     </v-list-item>
-    <v-divider></v-divider>
+    <v-divider/>
     <v-list-item class="d-flex align-end"
     >
       Dark mode
-      <v-switch  prepend-icon="mdi-theme-light-dark"
-      @change="toggleTheme()" color="success"/>
+      <v-switch 
+      prepend-icon="mdi-theme-light-dark"
+      @change="toggleTheme()"
+      color="success"/>
     </v-list-item>
   </v-list>
 </v-navigation-drawer>

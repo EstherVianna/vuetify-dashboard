@@ -1,4 +1,18 @@
-# default
+Zipro Dashboard (vue.js and vuetify)
+# <a href="https://ziprodashboard.vercel.app/home" target= "_blank">Zipro Dashboard</a>
+
+## Description 
+Zipro Dashboard is an (almost) complete dashboard that allow the users to create new users, write and visualize reports and there's much more coming up.
+In a near future, the dashboard will be complete and much more functions will be added.
+
+## Process
+
+- Semantic HTML;
+- Vue.js;
+- Vuetify;
+- Vue router;
+- Responsive;
+- Form Validation;
 
 ## Project setup
 

@@ -1,4 +1,5 @@
 <script setup>
+
 </script>
 <template>
 <v-col cols="12" md="6" lg="4">

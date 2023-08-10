@@ -17,6 +17,13 @@
             >
             Back
             </v-btn>
+            <v-btn
+            prepend-icon="mdi-arrow-left"
+            variant="plain"
+            to="home"
+            >
+            Back
+            </v-btn>
         </v-card-actions>
         <p
         class="d-flex justify-center text-h6 text-lg-h4 my-2"

@@ -1,4 +1,8 @@
 <script setup>
+import ReportCard from '@/components/ReportCard.vue';
+import { inject } from 'vue';
+
+const validationItens = inject('validationItens');
 </script>
 <template>
 <v-main>
